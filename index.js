@@ -30,19 +30,6 @@ function checkCollision(rock) {
     const rockRightEdge = rockLeftEdge + 20;
     
     return ((rockLeftEdge < dodgerLeftEdge && rockRightEdge > dodgerLeftEdge) && (rockLeftEdge > dodgerLeftEdge && rockRightEdge < dodgerRightEdge) && (rockLeftEdge < dodgerRightEdge && rockRightEdge > dodgerRightEdge))
-
-    if (false /**
-               * Think about it -- what's happening here?
-               * There's been a collision if one of three things is true:
-               * 1. The rock's left edge is < the DODGER's left edge,
-               *    and the rock's right edge is > the DODGER's left edge;
-               * 2. The rock's left edge is > the DODGER's left edge,
-               *    and the rock's right edge is < the DODGER's right edge;
-               * 3. The rock's left edge is < the DODGER's right edge,
-               *    and the rock's right edge is > the DODGER's right edge.
-               */) {
-      return true
-    }
   }
 }
 
