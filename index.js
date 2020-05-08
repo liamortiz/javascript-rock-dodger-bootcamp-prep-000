@@ -54,14 +54,14 @@ function createRock(x) {
   GAME.appendChild(rock)
   
   function moveRock() {
-    /**
-     * If a rock collides with the DODGER,
-     * we should call endGame().
-     */
-     if (positionToInteger(rock.style.top) > GAME_HEIGHT) {GAME.removeChild(rock); return}
-     
-     rock.style.top = `${positionToInteger(rock.style.top) + 2}px`
-     window.requestAnimationFrame(moveRock)
+    
+    if (checkCollision(rock)) {
+      endGame()
+    }
+    if (positionToInteger(rock.style.top) > GAME_HEIGHT) {GAME.removeChild(rock); return}
+    
+    rock.style.top = `${positionToInteger(rock.style.top) + 2}px`
+    window.requestAnimationFrame(moveRock)
      
      
   }
