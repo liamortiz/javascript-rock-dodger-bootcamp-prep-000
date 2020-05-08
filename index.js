@@ -41,16 +41,14 @@ function createRock(x) {
     
     if (checkCollision(rock)) {
       endGame()
-    }elseif
-    if (positionToInteger(rock.style.top) > GAME_HEIGHT) {
+    } else if (positionToInteger(rock.style.top) > GAME_HEIGHT) {
       rock.remove()
+    } else {
+      rock.style.top = `${positionToInteger(rock.style.top) + 2}px`
+      window.requestAnimationFrame(moveRock)
     }
-    
-    rock.style.top = `${positionToInteger(rock.style.top) + 2}px`
-    window.requestAnimationFrame(moveRock)
-     
-     
   }
+  
   window.requestAnimationFrame(moveRock)
   ROCKS.push(rock)
 
